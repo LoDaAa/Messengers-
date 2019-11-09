@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.grid {
+  width: 50vmin;
+  height: 50vmin;
+  overflow: hidden;
+  background: white;
+  position: absolute;
+  top: 50vh;
+  margin-top: -50vmin;
+  left: 50vw;
+  margin-left: -50vmin;
+  border: 1px solid black;
+   box-sizing: border-box;
+  }
+
+.grid > div {
+  box-sizing: border-box;
+  float: left;
+  border: 1px solid black;
+  position: relative;
+  background-image: radial-gradient(ellipse at center, transparent 0%, transparent 20.5%, white 21.484374%);
+  height: calc(100% / var(--size));
+  width: calc(100% / var(--size));
+}
+.grid > div[data-completed="true"] {
+  background-image: radial-gradient(ellipse at center, transparent 0%, transparent 20.5%, 21.484374%);
+ }
+
+.grid[data-size="2"] > div { --size: 2; }
+.grid[data-size="3"] > div { --size: 3; }
+
+.grid > div:after,
+.grid > div:before {
+  content: '';
+  background-color: inherit;
+  display: block;
+  position: absolute;
+ }
+
+.grid > div[data-t]:before {
+  width: 30%;
+  height: 50%;
+  left: 35%;
+  top: -1px; }
+
+.grid > div[data-b]:before {
+  width: 30%;
+  height: 50%;
+   left: 35%;
+   bottom: -1px;
+  }
+
+.grid > div[data-l]:before {
+  width: 50%;
+  height: 30%;
+   left: -1px;
+   top: 35%;
+ }
+
+.grid > div[data-r]:before {
+  width: 50%;
+   height: 30%;
+    right: -1px;
+     top: 35%;
+   }
+
+.grid > div[data-t][data-b]:before {
+  width: 30%;
+  height: calc(100% + 2px);
+  left: 35%;
+   top: -1px;
+ }
+
+.grid > div[data-l][data-r]:before {
+  width: calc(100% + 2px);
+  height: 30%;
+  left: -1px;
+  top: 35%;
+ }
+
+.grid > div[data-t][data-l]:before {
+  width: 30%;
+  height: 50%;
+  left: 35%;
+   top: -1px;
+  }
+.grid > div[data-t][data-l]:after {
+  width: 50%;
+  height: 30%;
+   left: -1px;
+    top: 35%;
+  }
+
+.grid > div[data-t][data-r]:before {
+  width: 30%;
+  height: 50%;
+  left: 35%;
+  top: -1px;
+}
+
+.grid > div[data-t][data-r]:after {
+  width: 50%;
+   height: 30%;
+    right: -1px;
+     top: 35%;
+   }
+
+.grid > div[data-b][data-l]:before {
+  width: 30%;
+   height: 50%;
+   left: 35%;
+   top: auto;
+    bottom: -1px;
+  }
+.grid > div[data-b][data-l]:after {
+   width: 50%;
+   height: 30%;
+    left: -1px;
+     top: 35%;
+   }
+
+.grid > div[data-b][data-r]:before {
+  width: 30%;
+   height: 50%;
+   left: 35%;
+    top: auto;
+    bottom: -1px;
+  }
+
+.grid > div[data-b][data-r]:after { width: 50%;
+   height: 30%;
+   right: -1px;
+   top: 35%;
+  }
+
+
+
+.grid > div[data-id="1"] {
+  background-color: #fc0d1b;
+}
+.grid > div[data-id="2"] {
+  background-color: #0f7f12;
+ }
+.grid > div[data-id="3"] {
+  background-color: #0b24fb;
+ }
